@@ -1,5 +1,11 @@
+import React from "react";
+
 function App() {
-  return <div>Online-store</div>;
+  return (
+    <div className="app-wrapper">
+      <header></header>;
+    </div>
+  );
 }
 
 export default App;
