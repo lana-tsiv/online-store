@@ -7,7 +7,6 @@
     /*background-color: var(--color-polar);*/
     border-top: 1px solid var(--color-light-gray);
     color: var(--color-gray);
-    font-family: Avenir, sans-serif;
 }
 
 .footer__content-wrap {

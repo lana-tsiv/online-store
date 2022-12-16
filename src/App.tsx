@@ -1,6 +1,5 @@
 import './styles/colors.css'
 import Footer from "./components/Footer";
-import './styles/main-styles.css'
 import './styles/Footer.css';
 
 function App() {
