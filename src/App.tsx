@@ -1,13 +1,17 @@
+
+import './styles/colors.css'
+import Footer from "./components/Footer";
+import './styles/Footer.css';
 import Header from "./components/header";
 
-import "./styles/colors.css";
-
-function App() {
+  function App() {
   return (
     <div className="app-wrapper">
       <Header />
+      <Footer />
     </div>
   );
+
 }
 
 export default App;
