@@ -1,7 +1,13 @@
-import './styles/colors.css'
+import Header from "./components/header";
+
+import "./styles/colors.css";
 
 function App() {
-    return <div>Online-store</div>;
+  return (
+    <div className="app-wrapper">
+      <Header />
+    </div>
+  );
 }
 
 export default App;
