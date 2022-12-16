@@ -1,11 +1,11 @@
-import './styles/colors.css'
+import Header from "./components/header";
 
-import React from "react";
+import "./styles/colors.css";
 
 function App() {
-    return (
+  return (
     <div className="app-wrapper">
-      <header></header>;
+      <Header />
     </div>
   );
 }
