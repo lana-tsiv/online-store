@@ -11,11 +11,9 @@ function App() {
         <div className="app-wrapper">
             <Routes>
                 <Route path='/' element={<Layout/>}>
-                    <Route errorElement={<NotFoundPage/>}>
-                        <Route index element={<Homepage/>}/>
-                    </Route>
+                    <Route index element={<Homepage/>}/>
+                    <Route path="*" element={<NotFoundPage/>}/>
                 </Route>
-                {/*<Route path='*' element={<NotFoundPage/>}/>*/}
             </Routes>
         </div>
     );
