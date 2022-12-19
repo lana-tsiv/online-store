@@ -12,7 +12,6 @@ const Header = () => {
         <img src={cream} alt="cream" />
         <h1>Cosmetics</h1>
       </div>
-
       <img src={basket} alt="basket" />
     </header>
   );
