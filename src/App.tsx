@@ -1,13 +1,13 @@
-import {Routes, Route} from "react-router-dom";
-import Homepage from './pages/Home-page';
-import './styles/colors.css'
-import './styles/Footer.css';
+import { Routes, Route } from "react-router-dom";
+import Homepage from "./pages/Home-page";
+import "./styles/colors.css";
+import "./styles/Footer.css";
 import Layout from "./components/Layout";
 import NotFoundPage from "./pages/Not-found-page";
 import Cart from "./pages/Cart";
 
-
 function App() {
+
     return (
         <div className="app-wrapper">
             <Routes>
@@ -19,7 +19,6 @@ function App() {
             </Routes>
         </div>
     );
-
 }
 
 export default App;
