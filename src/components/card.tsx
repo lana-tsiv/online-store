@@ -14,6 +14,7 @@ export function Cards(cards: CardProps) {
         alt={cards.card.productName}
       />
       <p>{cards.card.brand}</p>
+      <p>{cards.card.productName}</p>
       <p>{cards.card.category}</p>
       <p>{cards.card.price}</p>
       <p>{cards.card.stock}</p>
