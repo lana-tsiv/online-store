@@ -1,23 +1,22 @@
+import { Routes, Route } from "react-router-dom";
+import Homepage from "./pages/Home-page";
 import "./styles/colors.css";
-import Footer from "./components/Footer";
 import "./styles/Footer.css";
+import Layout from "./components/Layout";
+import NotFoundPage from "./pages/Not-found-page";
 import Header from "./components/header";
-import { Cards } from "./components/card";
-import { dataCard } from "./data/dataCard";
+import Footer from "./components/Footer";
 
 function App() {
   return (
     <div className="app-wrapper">
       <Header />
-      <div className="main-wrapper">
-        <div className="filter"></div>
-        <div className="card">
-          {dataCard.map((item) => (
-            <Cards card={item} />
-          ))}
-        </div>
-      </div>
-
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Homepage />} />
+          <Route path="*" element={<NotFoundPage />} />
+        </Route>
+      </Routes>
       <Footer />
     </div>
   );
