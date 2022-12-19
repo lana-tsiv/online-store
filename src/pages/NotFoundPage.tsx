@@ -3,7 +3,7 @@ import Image404 from './../assets/image/404.png'
 import {Link} from 'react-router-dom';
 
 
-const Notfoundpage = () => {
+const NotFoundPage = () => {
     return (
         <div className='not-found-wrap'>
             <img className='not-found__image' src={Image404} alt='illustration' />
@@ -13,4 +13,4 @@ const Notfoundpage = () => {
     );
 };
 
-export default Notfoundpage;
+export default NotFoundPage;
