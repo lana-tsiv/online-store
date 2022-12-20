@@ -116,7 +116,7 @@
 }
 
 .button__details {
-    background-color: var(--color-light-gray);
+    background-color: var(--color-polar);
     color: var(--color-dark-blue);
 }
 
