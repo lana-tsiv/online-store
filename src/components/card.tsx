@@ -1,6 +1,8 @@
-import { ICard } from "../models";
-import "../styles/card.css";
 import { Link } from "react-router-dom";
+
+import { ICard } from "../models";
+
+import "../styles/card.css";
 
 interface CardProps {
   card: ICard;
@@ -27,7 +29,7 @@ export function Cards(cards: CardProps) {
       </Link>
       <div className="product-tile__buttons">
         <button className="button__add-to-cart">Add to cart</button>
-        <Link to="/product-card">
+        <Link to={`/product-card/${cards.card.id}`}>
           <button className="button__details">Details</button>
         </Link>
       </div>

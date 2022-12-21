@@ -1,4 +1,5 @@
 import { Cards } from "../components/card";
+
 import { dataCard } from "../data/dataCard";
 
 const HomePage = () => {

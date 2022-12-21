@@ -1,6 +1,6 @@
+import {useState} from "react";
 import {ICard} from "../models";
 import './../styles/CartItemStyles.css'
-import {useState} from "react";
 
 interface CartItemProps {
     data: ICard

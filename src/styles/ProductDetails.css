@@ -1,0 +1,60 @@
+.product-details {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  border: solid 1px var(--color-light-gray);
+  border-radius: 10px;
+  margin: 5% 15%;
+}
+
+.product-details:hover {
+  border: solid 1px var(--color-orange);
+}
+
+.product-details__image {
+  object-fit: cover;
+}
+
+.product-details-image-photo {
+  width: 427px;
+  height: 427px;
+  border-radius: 10px;
+}
+
+.product-details__info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 10px;
+  gap: 4px;
+  background-color: var(--color-Gainsboro);
+}
+
+.product-details__brand {
+  font-size: 0.9rem;
+  font-weight: bolder;
+}
+
+.product-details__product-name {
+  font-size: 0.9rem;
+  color: var(--color-shuttle-gray);
+}
+
+.product-details__category {
+  font-weight: normal;
+}
+
+.product-details__price {
+  color: var(--color-dark-blue);
+  font-weight: bolder;
+  font-size: 1.2rem;
+}
+
+button {
+  width: 258px;
+  height: 60px;
+  background-color: var(--color-orange);
+  border: solid 1px var(--color-orange);
+}
+
