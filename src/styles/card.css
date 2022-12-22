@@ -126,3 +126,20 @@
     color: var(--color-polar);
     background-color: var(--color-gray);
 }
+
+
+.disabled {
+    background: var(--color-polar);
+    color: var(--color-gray);
+    pointer-events: none;
+    box-shadow: none;
+}
+
+.disabled:hover {
+    background: var(--color-gray);
+    color: var(--color-polar);
+}
+
+.not-allowed {
+    cursor: not-allowed;
+}
