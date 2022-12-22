@@ -23,9 +23,11 @@
 }
 
 .basket-wrap {
+  width:30%;
+  justify-content: flex-end;
   display: flex;
   flex-direction: row;
-  gap: 10px;
+  gap: 24px;
 }
 
 .basket__price {
@@ -46,7 +48,6 @@
   color: var(--color-dark-blue);
   font-weight: 800;
   font-size: 1.4rem;
-  width: 60px;
 }
 
 .basket-icon {
