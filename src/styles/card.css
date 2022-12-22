@@ -32,7 +32,7 @@
     flex-grow: 1;
     flex-shrink: 0;
     flex-basis: 20%;
-    height: 280px;
+    min-height: 280px;
     padding: 16px;
     border-radius: 12px;
     display: flex;
@@ -67,7 +67,6 @@
 .product-tile__product-name {
     color: var(--color-shuttle-gray);
     font-size: 0.7rem;
-    height: 28px;
 }
 
 .product-tile__category {
@@ -77,6 +76,7 @@
 .price-info-wrap {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     gap: 12px;
     align-items: center;
     margin-top: 10px;
@@ -94,6 +94,8 @@
 .product-tile__buttons {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
     justify-content: space-between;
     align-items: center;
 }

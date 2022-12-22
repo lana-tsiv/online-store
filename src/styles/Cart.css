@@ -21,6 +21,31 @@
     font-size: 1.6rem;
 }
 
+.cart__empty-wrap {
+    width: 100%;
+    padding: 72px 0 0;
+    display: flex;
+    justify-content: center;
+}
+
+.cart__empty-image {
+    max-width: 20%;
+    object-fit: cover;
+    animation: move 5s linear infinite;
+}
+
+@keyframes move {
+    0% {
+        opacity: 0;
+        transform: translateX(200px);
+    }
+    100% {
+        transform: translateX(-200px);
+        opacity: 20%;
+    }
+
+}
+
 .cart__remove-all {
     font-size: 0.9rem;
     font-weight: normal;
@@ -71,4 +96,20 @@
 
 .button-buy:hover {
     background: linear-gradient(105deg, var(--color-sun), var(--color-light-orange));
+}
+
+.disabled {
+    background: var(--color-polar);
+    color: var(--color-gray);
+    pointer-events: none;
+    box-shadow: none;
+}
+
+.disabled:hover {
+    background: var(--color-gray);
+    color: var(--color-polar);
+}
+
+.not-allowed {
+    cursor: not-allowed;
 }
