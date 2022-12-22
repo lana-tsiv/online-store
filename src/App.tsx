@@ -1,25 +1,29 @@
 import { Routes, Route } from "react-router-dom";
+
+import Cart from "./pages/Cart";
 import HomePage from "./pages/HomePage";
-import "./styles/colors.css";
-import "./styles/Footer.css";
 import Layout from "./components/Layout";
 import NotFoundPage from "./pages/NotFoundPage";
-import Cart from "./pages/Cart";
 import ProductDetailsPage from "./pages/ProductDetailsPage";
-function App() {
+import ModalPopupPage from "./pages/ModalPopupPage";
 
-    return (
-        <div className="app-wrapper">
-            <Routes>
-                <Route path='/' element={<Layout/>}>
-                    <Route index element={<HomePage/>}/>
-                    <Route path='/product-card' element={<ProductDetailsPage/>}/>
-                    <Route path='/cart' element={<Cart/>}/>
-                    <Route path="*" element={<NotFoundPage/>}/>
-                </Route>
-            </Routes>
-        </div>
-    );
+import "./styles/colors.css";
+import "./styles/Footer.css";
+
+function App() {
+  return (
+    <div className="app-wrapper">
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<HomePage />} />
+          <Route path="/product-card/:id" element={<ProductDetailsPage />} />
+          <Route path="/ModalPopupPage" element={<ModalPopupPage />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="*" element={<NotFoundPage />} />
+        </Route>
+      </Routes>
+    </div>
+  );
 }
 
 export default App;
