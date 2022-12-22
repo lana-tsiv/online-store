@@ -1,22 +1,19 @@
-import {useState} from "react";
-import {ICard} from "../models";
 import './../styles/CartItemStyles.css'
+import {ICardStore, removeItem} from "../redux/slices/cartSlice";
+import {useDispatch} from "react-redux";
 
 interface CartItemProps {
-    data: ICard
+    data: ICardStore,
+    onClickMinus: (data: ICardStore) => void
+    onClickPlus: (data: ICardStore) => void
 }
 
 const CartItem = (props: CartItemProps) => {
+    const {onClickMinus, onClickPlus} = props
 
-    const [quantity, setQuantity] = useState(1);
-
-    function Increment() {
-        setQuantity(quantity + 1)
-    }
-
-    function Decrement() {
-        setQuantity(quantity - 1)
-        if (quantity < 1) setQuantity(0)
+    const dispatch = useDispatch()
+    const removeItemsGroup = () => {
+       dispatch(removeItem(props.data));
     }
 
     return (
@@ -28,14 +25,17 @@ const CartItem = (props: CartItemProps) => {
                 <p className='cart-item__category'>{props.data.category}</p>
             </div>
             <div className='cart-item__quantity'>
-                <button className='button-quantity' onClick={Decrement}>-</button>
-                <p className='total-quantity'>{quantity}</p>
-                <button className='button-quantity' onClick={Increment}>+</button>
+                <button className='button-quantity' onClick={() => onClickMinus(props.data)}>-</button>
+                <p className='total-quantity'>{props.data.count}</p>
+                <button className='button-quantity' onClick={() => onClickPlus(props.data)}>+</button>
             </div>
             <div className='cart-item__price-wrap'>
-                <p className='cart-item__price'>${props.data.price}</p>
+                <p className='cart-item__price'>${(props.data.price * props.data.count).toFixed(2)}</p>
             </div>
-            <p className='cart-item__remove'>Remove</p>
+            <div className='cart-item__stock-wrap'>
+                <p className='cart-item__stock'>Stock: {props.data.stock}</p>
+            </div>
+            <p onClick={removeItemsGroup} className='cart-item__remove'>Remove</p>
         </div>
     );
 };

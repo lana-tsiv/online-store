@@ -61,8 +61,12 @@
     font-size: 1rem;
 }
 
-.cart-item__price-wrap {
+.cart-item__price-wrap, .cart-item__stock-wrap {
     width: 10%;
+}
+
+.cart-item__stock {
+    color: var(--color-gray);
 }
 
 .cart-item__price {
