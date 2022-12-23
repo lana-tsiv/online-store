@@ -42,18 +42,18 @@
 
 .sort-wrap:hover .sort__title {
     color: var(--color-shuttle-gray);
-    transition: all 0.1s linear;
+    transition: all 0.3ms linear;
 }
 
 .sort-wrap:hover .sort__icon {
     filter: opacity(90%);
-    transition: all 0.1s linear;
+    transition: all 0.3ms linear;
 }
 
 .open {
     filter: opacity(90%);
     transform: scaleY(-1);
-    transition: all 0.1s linear;
+    transition: all 0.3ms linear;
 }
 
 .sort__title {
@@ -73,5 +73,5 @@
     filter: opacity(40%);
     width: 12px;
     object-fit: cover;
-    transition: all 0.1s linear;
+    transition: all 0.3ms linear;
 }

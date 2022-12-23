@@ -20,8 +20,8 @@ const HomePage = () => {
         };
 
         dispatch(addItem(item));
-
     }
+
     return (
         <div className="main-wrapper">
             <div className="filter">Filter</div>

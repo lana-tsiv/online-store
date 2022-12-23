@@ -1,8 +1,14 @@
 import './../styles/Sort.css'
 import IconDown from './../assets/icons/down-arrow.png'
 import {useState} from "react";
+import {setSort} from "../redux/slices/filterSlice";
+import {useDispatch, useSelector} from "react-redux";
+import {RootState} from "../redux/store";
 
 const Sort = () => {
+    const dispatch = useDispatch()
+
+    const sort = useSelector((state: RootState) => state.filter.sort)
 
     const [dropDown, setDropDown] = useState(false)
 
@@ -17,16 +23,23 @@ const Sort = () => {
             sortIcon?.classList.add('open')
             setDropDown(true)
         }
-
     }
 
     const [sortSelect, setSortSelect] = useState(0)
-    const selectList = ['No selected', 'Price: high to low', 'Price: low to high', 'Brand name']
+
+    const selectList = [
+        { name: 'No selected', sortProperty: ''},
+        { name: 'Price: high to low', sortProperty: 'price'},
+        { name: 'Price: low to high', sortProperty: '-price'},
+        { name: 'Brand name (DESC)', sortProperty: 'brand'},
+        { name: 'Brand name (ASC)', sortProperty: '-brand'},
+    ]
 
     const onClickSortSelect = (index: number) => {
+        dispatch(setSort(selectList[index]))
+        setSortSelect(index)
         const sortIcon = document.querySelector('.sort__icon')
         sortIcon?.classList.remove('open')
-        setSortSelect(index)
         setDropDown(false)
     }
 
@@ -35,14 +48,14 @@ const Sort = () => {
             <div onClick={openDropDown} className='sort-dropdown-button'>
                 <img className='sort__icon' src={IconDown} alt='arrow down'/>
                 <p className='sort__title'>Sort by</p>
-                <span className='sort__selected'>{selectList[sortSelect]}</span>
+                <span className='sort__selected'>{sort.name}</span>
             </div>
             {dropDown && (<div className='sort__drop-down'>
                 <ul>
                     {
                         selectList.map((item, index) => (
-                            <li key={item} onClick={() => onClickSortSelect(index)}
-                                className={`drop-down__item ${sortSelect === index ? 'select' : ''}`}>{item}</li>
+                            <li key={item.name} onClick={() => onClickSortSelect(index)}
+                                className={`drop-down__item ${sortSelect === index ? 'select' : ''}`}>{item.name}</li>
                         ))
                     }
                 </ul>
