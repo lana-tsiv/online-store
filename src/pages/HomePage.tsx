@@ -3,7 +3,7 @@ import {dataCard} from "../data/dataCard";
 import {useDispatch} from "react-redux";
 import {addItem} from "../redux/slices/cartSlice";
 import {ICard} from "../models";
-
+import Sort from "../components/Sort";
 
 const HomePage = () => {
     const dispatch = useDispatch();
@@ -25,10 +25,16 @@ const HomePage = () => {
     return (
         <div className="main-wrapper">
             <div className="filter">Filter</div>
-            <div className="card">
-                {dataCard.map((item) => (
-                    <Cards onClickAddItem={handleAddItem} key={item.id} card={item}/>
-                ))}
+            <div className='card-wrap'>
+                <div className='sort-bar-wrapper'>
+                    <Sort/>
+                    <div>Sort ...</div>
+                </div>
+                <div className="card">
+                    {dataCard.map((item) => (
+                        <Cards onClickAddItem={handleAddItem} key={item.id} card={item}/>
+                    ))}
+                </div>
             </div>
         </div>
     );
