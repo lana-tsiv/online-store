@@ -1,12 +1,12 @@
 .sort-wrap {
     position: relative;
+    min-width: 200px;
 }
 
 .sort-dropdown-button {
     display: flex;
     flex-direction: row;
     gap: 6px;
-    justify-content: space-between;
     cursor: pointer;
     align-items: center;
 }
