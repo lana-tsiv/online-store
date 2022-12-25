@@ -1,8 +1,10 @@
+import Popup from "reactjs-popup";
 import { useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
-import { dataCard } from "../data/dataCard";
 import { ICard } from "../models";
+import { dataCard } from "../data/dataCard";
+import Modal from "../components/ModalPopup";
 
 import "./../styles/ProductDetails.css";
 
@@ -44,9 +46,14 @@ const ProductDetailsPage = () => {
         <p className="product-details__category">{currCard.category}</p>
         <p className="product-details__description">{currCard.description}</p>
         <button className="product-details-button_add">ADD TO CART</button>
-        <Link to="/ModalPopupPage">
-          <button className="product-details-button_buy">BUY NOW</button>
-        </Link>
+        <Popup
+          trigger={
+            <button className="product-details-button_buy">BUY NOW</button>
+          }
+          position="center center"
+        >
+          <Modal />
+        </Popup>
       </div>
     </div>
   );
