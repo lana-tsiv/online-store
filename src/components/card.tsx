@@ -16,7 +16,7 @@ export function Cards({ onClickAddItem, card }: CardProps) {
 
   return (
     <div className="product-tile">
-      <Link to="/product-card" className="link">
+      <Link to={`/product-card/${card.id}`} className="link">
         <div className="product-tile__info">
           <img
             className="product-tile__img"
