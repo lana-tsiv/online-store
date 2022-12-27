@@ -153,7 +153,7 @@ export const dataCard: ICard[] = [
     id: 12,
     productName: "Dream Flawless Nude Fluid Touch Foundation 20ml",
     brand: "MAYBELLINE",
-    category: "Foundation",
+    category: "foundation",
     description:
       "Maybelline Dream Flawless Nude Fluid Touch Foundation contains concentrated pigments that give flawless coverage yet its texture is 12 times finer for a perfectly nude finish and feel.",
     price: 10.95,
@@ -164,7 +164,7 @@ export const dataCard: ICard[] = [
     id: 13,
     productName: "True Match The Foundation 30ml",
     brand: "L'OREAL",
-    category: "Foundation",
+    category: "foundation",
     description:
       "L'Oreal True Match The Foundation gives a completely natural and complexion-perfecting finish, enhancing every woman's natural beauty. It is a super-blendable foundation that perfectly matches the skin's unique tone and texture.",
     price: 15.83,
@@ -175,7 +175,7 @@ export const dataCard: ICard[] = [
     id: 14,
     productName: "Healthy Skin Harmony Miracle Foundation SPF20 30ml",
     brand: "MAX FACTOR",
-    category: "Foundation",
+    category: "foundation",
     description:
       "Max Factor Healthy Skin Harmony Miracle Foundation is an innovative and multi-tasking face makeup that leaves the complexion looking flawless. Gliding onto skin like silk, the weightless formula provides up to 24 hours of hydration whilst using oil absorbers to reduce shine, creating the perfect moisture balance for a clear, bright complexion.",
     price: 14.99,
@@ -186,7 +186,7 @@ export const dataCard: ICard[] = [
     id: 15,
     productName: "Dream Radiant Liquid Hydrating Foundation 30ml",
     brand: "MAYBELLINE",
-    category: "Foundation",
+    category: "foundation",
     description:
       "Maybelline Dream Radiant Liquid Hydrating Foundation works to minimise the appearance of pores and fine lines, leaving a weightless veil in its wake. Medium coverage is promoted, with the airy formula allowing you to build to achieve your desired aesthetic.",
     price: 10.95,
@@ -197,7 +197,7 @@ export const dataCard: ICard[] = [
     id: 16,
     productName: "NYX Stay Matte But NotFlat Liquid Foundation 35ml",
     brand: "NYX PROFESSIONAL MAKE UP",
-    category: "Foundation",
+    category: "foundation",
     description:
       "NYX Professional Make Up Stay Matte But Not Flat Liquid Foundation provides medium to full coverage with a light texture for easy application. Consists of Vitamin E to soften blemishes and fine lines. Long lasting wear up to 8 hours.",
     price: 13.40,

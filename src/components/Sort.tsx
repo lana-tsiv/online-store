@@ -29,10 +29,10 @@ const Sort = () => {
 
     const selectList = [
         { name: 'No selected', sortProperty: ''},
-        { name: 'Price: high to low', sortProperty: 'price'},
-        { name: 'Price: low to high', sortProperty: '-price'},
-        { name: 'Brand name (DESC)', sortProperty: 'brand'},
-        { name: 'Brand name (ASC)', sortProperty: '-brand'},
+        { name: 'Price: low to high', sortProperty: 'price'},
+        { name: 'Price: high to low', sortProperty: '-price'},
+        { name: 'Brand name (ASC)', sortProperty: 'brand'},
+        { name: 'Brand name (DESC)', sortProperty: '-brand'},
     ]
 
     const onClickSortSelect = (index: number) => {
