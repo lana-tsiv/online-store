@@ -1,3 +1,10 @@
+.product-details-wrap {
+  display: flex;
+  flex-direction: column;
+  padding: 48px 36px;
+
+}
+
 .product-details {
   display: flex;
   position: relative;

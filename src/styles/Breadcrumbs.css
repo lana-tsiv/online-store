@@ -1,0 +1,27 @@
+.breadcrumb-not-active {
+    color: var(--color-gray);
+    font-size: 0.9rem;
+    font-weight: normal;
+    text-decoration: none;
+    cursor: default;
+}
+
+.breadcrumb__home:hover {
+    cursor: pointer;
+    color: var(--color-shuttle-gray);
+}
+
+.breadcrumb-active {
+    color: var(--color-dark-blue);
+}
+
+.breadcrumb__arrow {
+    width: 10px;
+    object-fit: cover;
+    margin: 0 12px;
+    filter: opacity(40%);
+}
+
+.breadcrumb__last {
+    color: var(--color-shuttle-gray);
+}
