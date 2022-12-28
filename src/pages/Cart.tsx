@@ -5,6 +5,9 @@ import {useDispatch, useSelector} from "react-redux";
 import {RootState} from "../redux/store";
 import {addItem, clearItems, ICardStore, removeItem} from "../redux/slices/cartSlice";
 import cartEmpty from './../assets/image/empty.png'
+import ReactModal from 'react-modal';
+import {useState} from "react";
+import Modal from "../components/ModalPopup";
 
 const Cart = () => {
     const scrollToTop = () => {
@@ -30,6 +33,16 @@ const Cart = () => {
         dispatch(removeItem(data))
     }
 
+    const [modalIsOpen, setIsOpen] = useState(false);
+
+    function openModal() {
+        setIsOpen(true);
+    }
+
+    function closeModal() {
+        setIsOpen(false);
+    }
+
     return (
         <div className='cart-container'>
             <div className='cart-info-wrap'>
@@ -46,11 +59,22 @@ const Cart = () => {
                 <Link className={`${items.length === 0 ? 'cart-button button-buy' : 'cart-button button-return'}`}
                       to='/' onClick={scrollToTop}>Continue shopping</Link>
                 <div className='not-allowed'>
-                    <button className={`cart-button button-buy ${items.length === 0 ? 'disabled' : ''}`}>Proceed to
+                    <button className={`cart-button button-buy ${items.length === 0 ? 'disabled' : ''}`}
+                            onClick={openModal}>Proceed to
                         checkout
                     </button>
                 </div>
             </div>
+            <ReactModal
+                className='modal-popup-wrap'
+                isOpen={modalIsOpen}
+                onRequestClose={closeModal}
+            >
+                <div className='modal-popup__content'>
+                    <button className='modal-popup__button-close' onClick={closeModal}>close</button>
+                    <Modal/>
+                </div>
+            </ReactModal>
         </div>
     );
 };
