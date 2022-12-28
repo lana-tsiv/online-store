@@ -1,4 +1,3 @@
-import Popup from "reactjs-popup";
 import {useEffect, useState} from "react";
 import {useLocation} from "react-router-dom";
 
@@ -9,6 +8,8 @@ import Modal from "../components/ModalPopup";
 import "./../styles/ProductDetails.css";
 import Breadcrumbs from "../components/Breadcrumbs";
 import ImageGallery from "../components/ImageGallery";
+
+import ReactModal from 'react-modal';
 
 const ProductDetailsPage = () => {
     const {pathname} = useLocation();
@@ -32,13 +33,22 @@ const ProductDetailsPage = () => {
         });
     }, [currentId, setCurrCard]);
 
-    return (
+    const [modalIsOpen, setIsOpen] = useState(false);
 
+    function openModal() {
+        setIsOpen(true);
+    }
+
+    function closeModal() {
+        setIsOpen(false);
+    }
+
+    return (
         <div className='product-details-wrap'>
             <Breadcrumbs id={currCard.id} title={currCard.brand} category={currCard.category}
                          productName={currCard.productName}/>
             <div className="product-details">
-                    <ImageGallery items={currCard.photos}/>
+                <ImageGallery items={currCard.photos}/>
                 <div className="product-details__info">
                     <p className="product-details__brand">{currCard.brand}</p>
                     <p className="product-details__product-name">{currCard.productName}</p>
@@ -50,17 +60,20 @@ const ProductDetailsPage = () => {
                     </div>
                     <div className='product-details__buttons-wrap'>
                         <button className="product-details-button_add">ADD TO CART</button>
-                        <Popup
-                            trigger={
-                                <button className="product-details-button_buy">BUY NOW</button>
-                            }
-                            position="center center"
-                        >
-                            <Modal/>
-                        </Popup>
+                        <button className="product-details-button_buy" onClick={openModal}>BUY NOW</button>
                     </div>
                 </div>
             </div>
+            <ReactModal
+                className='modal-popup-wrap'
+                isOpen={modalIsOpen}
+                onRequestClose={closeModal}
+            >
+                <div className='modal-popup__content'>
+                    <button className='modal-popup__button-close' onClick={closeModal}>close</button>
+                    <Modal/>
+                </div>
+            </ReactModal>
         </div>
     );
 };
