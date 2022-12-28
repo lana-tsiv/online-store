@@ -24,6 +24,8 @@ import photo181 from "../assets/image/cardphoto/18.1.jpg";
 import photo191 from "../assets/image/cardphoto/19.1.jpg";
 import photo192 from "../assets/image/cardphoto/19.2.jpg";
 import photo201 from "../assets/image/cardphoto/20.1.jpg";
+import gigiLipstick from '../assets/image/cardphoto/gigihadid_lipstick.jpeg';
+import gigiLipstick2 from '../assets/image/cardphoto/gigihadid_lipsticks1.jpeg';
 
 import { ICard } from "../models";
 
@@ -37,7 +39,7 @@ export const dataCard: ICard[] = [
       "Maybelline Gigi Hadid Lipstick is a highly pigmented colour with sensuous precious oils. Amp up your look for a statement-making West Coast Glow look",
     price: 10.95,
     stock: 5,
-    photos: [photo11, photo12],
+    photos: [photo11, photo12, gigiLipstick, gigiLipstick2],
   },
   {
     id: 2,

@@ -8,6 +8,7 @@ import Modal from "../components/ModalPopup";
 
 import "./../styles/ProductDetails.css";
 import Breadcrumbs from "../components/Breadcrumbs";
+import ImageGallery from "../components/ImageGallery";
 
 const ProductDetailsPage = () => {
     const {pathname} = useLocation();
@@ -32,17 +33,12 @@ const ProductDetailsPage = () => {
     }, [currentId, setCurrCard]);
 
     return (
+
         <div className='product-details-wrap'>
             <Breadcrumbs id={currCard.id} title={currCard.brand} category={currCard.category}
                          productName={currCard.productName}/>
             <div className="product-details">
-                <div className="product-details__image-wrap">
-                    <img
-                        className="product-details__image-photo"
-                        src={currCard.photos[0]}
-                        alt="view of product"
-                    />
-                </div>
+                    <ImageGallery items={currCard.photos}/>
                 <div className="product-details__info">
                     <p className="product-details__brand">{currCard.brand}</p>
                     <p className="product-details__product-name">{currCard.productName}</p>
