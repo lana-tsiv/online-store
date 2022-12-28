@@ -33,7 +33,7 @@ const Modal = () => {
                         placeholder="Name Surname"
                         {...register("name", {
                             required: true,
-                            pattern: /\d*(?:[a-zA-Z]){3,}\d* d*(?:[a-zA-Z]){2,}\d*/,
+                            pattern: /\d*(?:[a-zA-Z]){3,}\d* d*(?:[a-zA-Z]){3,}\d*/,
                         })}
                     />
                     <div className='input-error-data'>{errors?.name && <p>Wrong Name!</p>}</div>
