@@ -6,10 +6,15 @@ import {Link} from "react-router-dom";
 import type { RootState } from '../redux/store'
 
 import {useSelector} from "react-redux";
+import {useEffect} from "react";
 
 const Header = () => {
 
     const {items, totalPrice} = useSelector((state: RootState) => state.cart);
+
+    useEffect(() => {
+        localStorage.setItem('totalPrice', (JSON.stringify(totalPrice)));
+    }, )
 
     return (
         <header className="header">

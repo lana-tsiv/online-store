@@ -5,14 +5,24 @@ export interface ICardStore extends ICard {
     count: number
 }
 
+const getItems = ()  => {
+        const localItems = localStorage.getItem('items');
+        return localItems ? JSON.parse(localItems) : [];
+}
+
+const getTotalPrice = ()  => {
+    const localTotalPrice = localStorage.getItem('totalPrice');
+    return localTotalPrice ? Number(JSON.parse(localTotalPrice)) : 0;
+}
+
 export interface CounterState {
     totalPrice: number,
     items: Array<ICardStore>,
 }
 
 const initialState: CounterState = {
-    totalPrice: 0,
-    items: [],
+    totalPrice: getTotalPrice(),
+    items: getItems(),
 }
 
 export const cartSlice = createSlice({

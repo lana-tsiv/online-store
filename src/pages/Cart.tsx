@@ -6,7 +6,7 @@ import {RootState} from "../redux/store";
 import {addItem, clearItems, ICardStore, removeItem} from "../redux/slices/cartSlice";
 import cartEmpty from './../assets/image/empty.png'
 import ReactModal from 'react-modal';
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import Modal from "../components/ModalPopup";
 import Pagination from '../components/Pagination'
 
@@ -53,10 +53,14 @@ const Cart = () => {
     }
     const [currentPage, setCurrentPage] = useState(1);
 
+    useEffect(() => {
+        localStorage.setItem('items', JSON.stringify(items));
+    }, [items])
+
     return (
         <div className='cart-container'>
-            <div className='cart-info-wrap'>
-                <h2 className='cart__title'>Shoping cart</h2>
+            <div className={`${items.length === 0 ? 'cart-info-wrap none' : 'cart-info-wrap'}`}>
+                <h2 className='cart__title'>Shopping cart</h2>
                 <p onClick={removeAllItems} className='cart__remove-all'>Remove all items</p>
             </div>
             {items.length ? items.map((item) => (
