@@ -8,6 +8,15 @@ import cartEmpty from './../assets/image/empty.png'
 import ReactModal from 'react-modal';
 import {useState} from "react";
 import Modal from "../components/ModalPopup";
+import Pagination from '../components/Pagination'
+
+export interface PaginationProps {
+    limit?: number,
+    total?: number,
+    currentPage: number,
+    page?: number,
+    onPageChange: (page?:number) => void,
+}
 
 const Cart = () => {
     const scrollToTop = () => {
@@ -42,6 +51,7 @@ const Cart = () => {
     function closeModal() {
         setIsOpen(false);
     }
+    const [currentPage, setCurrentPage] = useState(1);
 
     return (
         <div className='cart-container'>
@@ -55,6 +65,12 @@ const Cart = () => {
                 <img className='cart__empty-image' src={cartEmpty} alt='empty'/>
             </div>
             }
+            <Pagination
+                currentPage={currentPage}
+                total={items.length}
+                limit={1}
+                onPageChange={(page=0) => setCurrentPage(page)}
+            />
             <div className='cart__buttons'>
                 <Link className={`${items.length === 0 ? 'cart-button button-buy' : 'cart-button button-return'}`}
                       to='/' onClick={scrollToTop}>Continue shopping</Link>
