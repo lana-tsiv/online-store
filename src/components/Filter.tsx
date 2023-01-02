@@ -15,27 +15,27 @@ type FilterType = {
   category: string;
 };
 
+const defaultFiltersState = {
+  brands: {
+    "NYX PROFESSIONAL MAKE UP": false,
+    MAYBELLINE: false,
+    "L'OREAL": false,
+    "MAX FACTOR": false,
+  },
+  categories: {
+    lipstick: false,
+    mascara: false,
+    "eye shadow": false,
+    foundation: false,
+  },
+};
+
 const Filter = () => {
   const dispatch = useDispatch();
 
-  const [filter, setFilter] = useState({
-    brands: {
-      "NYX PROFESSIONAL MAKE UP": false,
-      MAYBELLINE: false,
-      "L'OREAL": false,
-      "MAX FACTOR": false,
-    },
-    //
-    categories: {
-      lipstick: false,
-      mascara: false,
-      "eye shadow": false,
-      foundation: false,
-    },
-  });
+  const [filter, setFilter] = useState(defaultFiltersState);
 
   const checkHandler = (item: FilterType, switcher: string) => {
-
     if (switcher === "category") {
       setFilter({
         ...filter,
@@ -108,20 +108,24 @@ const Filter = () => {
     return acc;
   }, []);
 
-  const [key, setKey] = useState(0);
-  const resetClick = () => setKey((key) => key + 1);
-
   return (
     <div className="filter">
       <div className="filter__buttons-wrap">
-        <button className="filter__button" onClick={resetClick}>
+        <button
+          className="filter__button"
+          onClick={() => {
+            setFilter(defaultFiltersState);
+
+            dispatch(setFilterByCategoryAndBrand(defaultFiltersState));
+          }}
+        >
           Reset
         </button>
         <button className="filter__button">Copy link</button>
       </div>
       <p className="filter-type__title">Category</p>
       <div className="filter-type checkbox-container category">
-        <Fragment key={key}>
+        <Fragment>
           {findCategory.map((item: any, index: number) => {
             return (
               <div key={item.category + index} className="checkbox-item">
@@ -151,7 +155,7 @@ const Filter = () => {
       </div>
       <p className="filter-type__title">Brand name</p>
       <div className="filter-type checkbox-container brand-name">
-        <Fragment key={key}>
+        <Fragment>
           {findBrand.map((item: any, index: number) => {
             return (
               <div key={item.brand + index} className="checkbox-item">
