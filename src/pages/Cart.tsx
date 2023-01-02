@@ -110,7 +110,7 @@ const Cart = ({onChangeEvent}: CouponProps) => {
                         <div className='discount-form__coupon-wrap'>
                             {coupon ? coupon.map(item => (
                                 <div className='discount-form__coupon' key={item}>
-                                    <div className='coupon__item'>{item}</div>
+                                    <div className='coupon__item'>{item} <span>-10%</span></div>
                                     <button className='coupon__button' onClick={handleRemove}>Remove</button>
                                 </div>
                             )) : null}
