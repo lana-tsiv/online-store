@@ -6,3 +6,55 @@
   left: 0;
   top: 0;
 }
+
+input {
+  padding: 1em;
+  margin: 0.5em 0;
+  display: block;
+}
+
+main {
+  border: 5px solid lighten(button-color, 40%);
+  font-weight: 700;
+  margin: 2em auto;
+  padding: 1em;
+  width: 600px;
+}
+
+input {
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid gray;
+  width: 60%;
+  display: inline-block;
+  position: relative;
+}
+
+label {
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+svg {
+  position: absolute;
+  right: 10px;
+  bottom: 30%;
+ 
+}
+
+.multi-input {
+  margin-top: 20px;
+  width: 60%;
+  display: flex;
+  gap: 10px;
+  width: 60%;
+  display: inline-block;
+  position: relative;
+}
+
+small {
+  color: red;
+  font-size: 10px;
+  display: block;
+}

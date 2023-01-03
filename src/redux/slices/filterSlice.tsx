@@ -37,6 +37,8 @@ export const filterSlice = createSlice({
     },
     setSortByPriceAsc: (state, action) => {
       action.payload.sort((a: ICard, b: ICard) => a.price - b.price);
+
+      // console.log(result);
     },
     setSortByPriceDesc: (state, action) => {
       action.payload.sort((a: ICard, b: ICard) => a.price - b.price).reverse();
