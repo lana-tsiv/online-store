@@ -27,7 +27,7 @@ const CartItem = (props: CartItemProps) => {
             <div className='cart-item__quantity'>
                 <button className='button-quantity' onClick={() => onClickMinus(props.data)}>-</button>
                 <p className='total-quantity'>{props.data.count}</p>
-                <button className='button-quantity' onClick={() => onClickPlus(props.data)}>+</button>
+                <button className={props.data.stock === 0 ? 'button-quantity disabled' : 'button-quantity'} onClick={() => onClickPlus(props.data)}>+</button>
             </div>
             <div className='cart-item__price-wrap'>
                 <p className='cart-item__price'>${(props.data.price * props.data.count).toFixed(2)}</p>

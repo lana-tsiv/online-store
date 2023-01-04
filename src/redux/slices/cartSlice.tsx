@@ -1,5 +1,6 @@
 import {createSlice} from '@reduxjs/toolkit'
 import {ICard} from "../../models";
+import {dataCard} from "../../data/dataCard";
 
 export interface ICardStore extends ICard {
     count: number
@@ -7,7 +8,7 @@ export interface ICardStore extends ICard {
 
 const getItems = () => {
     const localItems = localStorage.getItem('items');
-    return localItems ? JSON.parse(localItems) : [];
+    return localItems ? JSON.parse(localItems) : dataCard;
 }
 
 const getTotalPrice = () => {
@@ -45,11 +46,21 @@ const calculateDiscount = (coupons: string[], totalNumber: number) => {
     return discount;
 }
 
+const setStockStorage = (stock: number) => {
+    localStorage.setItem('stock', JSON.stringify(stock));
+}
+
+const getStockStorage = () => {
+    const stock = localStorage.getItem('count');
+    return stock ? JSON.parse('stock') : 0;
+}
+
 export interface CounterState {
     totalPrice: number,
     items: Array<ICardStore>,
     discountTotal: number,
     coupon: string[],
+    stock: number
 }
 
 const initialState: CounterState = {
@@ -57,6 +68,7 @@ const initialState: CounterState = {
     items: getItems(),
     discountTotal: getDiscountTotal(),
     coupon: getCoupon(),
+    stock: getStockStorage(),
 }
 
 export const cartSlice = createSlice({
@@ -74,6 +86,13 @@ export const cartSlice = createSlice({
 
             state.discountTotal = calculateDiscount(state.coupon, state.totalPrice)
 
+            const findStock = state.items.find((item) => item.stock === action.payload.stock)
+            if (findStock && findStock.stock > 0) {
+                state.stock = findStock.stock--
+            }
+
+            setStockStorage(state.stock)
+
             setDiscountTotal(state.discountTotal)
             setCoupon(state.coupon)
         },
@@ -87,6 +106,11 @@ export const cartSlice = createSlice({
             }
 
             state.totalPrice = Number((state.totalPrice - action.payload.price).toFixed(2));
+
+            const findStock = state.items.find((item) => item.stock === action.payload.stock)
+            findStock && findStock.stock++
+
+            setStockStorage(state.stock)
 
             state.discountTotal = calculateDiscount(state.coupon, state.totalPrice)
 
