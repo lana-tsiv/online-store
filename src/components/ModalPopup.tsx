@@ -28,15 +28,23 @@ const Modal = () => {
     return;
   };
 
-//   const cvcValidate = (cvc: number);
-//   const data = useCreditCardValidator({cvcValidator: cvcValidate})
+  const cvcValidate = (cvc: string) => {
+    if (!/^[0-9]{3}$/.test(cvc)) {
+      return "Wrong CVC";
+    }
+    return;
+  };
+
   const {
     getCardNumberProps,
     getCardImageProps,
     getCVCProps,
     getExpiryDateProps,
     meta: { erroredInputs },
-  } = useCreditCardValidator({ expiryDateValidator: expDateValidate });
+  } = useCreditCardValidator({
+    expiryDateValidator: expDateValidate,
+    cvcValidator: cvcValidate,
+  });
 
   return (
     <div className="modal-popup">
@@ -93,37 +101,37 @@ const Modal = () => {
           <div className="input-error-data" style={{}}>
             {errors?.email && <p>Wrong Email!</p>}
           </div>
-          <input className="input-submit modal-popup_input" type="submit" />
-        </form>
-      </div>
-      <div className="modal-popup__card-details">
-        <h2 className="modal-popup__title">Credit card details</h2>
-        <form className="modal-popup-card">
-          <div className="modal-popup-card_wrapper">
-            {/* <input
-          className="modal-popup-card_wrapper"
-          placeholder="Number of card"
-          {...register("NumberСard", { required: true })}
-        /> */}
-            <div>
-              <input {...getCardNumberProps()} />
+
+          <div className="modal-popup__card-details">
+            <h2 className="modal-popup__title">Credit card details</h2>
+            <div className="modal-popup-card_wrapper">
+              <input
+                className="input modal-popup_card-details-cardNumber"
+                {...getCardNumberProps()}
+              />
               <small>
                 {erroredInputs.cardNumber && erroredInputs.cardNumber}
               </small>
 
-              <input {...getExpiryDateProps()} />
+              <input
+                className="input modal-popup_card-details-cardDate"
+                {...getExpiryDateProps()}
+              />
               <small>
                 {erroredInputs.expiryDate && erroredInputs.expiryDate}
               </small>
 
-              <input {...getCVCProps({})} />
+              <input
+                className="input modal-popup_card-details-cardCVC"
+                {...getCVCProps({})}
+              />
               <small>{erroredInputs.cvc && erroredInputs.cvc}</small>
 
-              <svg {...getCardImageProps({ images })} />
+              <svg className="modal-popup-card_wrapper_svg" {...getCardImageProps({ images })} />
             </div>
           </div>
+          <input className="input-submit modal-popup_input" type="submit" />
         </form>
-        <input className="input-submit modal-popup_input" type="submit" />
       </div>
     </div>
   );
