@@ -112,6 +112,12 @@ const HomePage = () => {
                   .includes(searchData.toLowerCase())
               );
             })
+            // .map((item) => (
+            //   <Cards
+            //     big={view}
+            //     onClickAddItem={handleAddItem}
+            //     key={item.id}
+            //     card={item}
             .map((item) => (
               <Cards
                 big={view}
