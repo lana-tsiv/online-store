@@ -1,34 +1,55 @@
 import photo11 from "../assets/image/cardphoto/1.1.jpg";
 import photo12 from "../assets/image/cardphoto/1.2.jpg";
+import photo13 from "../assets/image/cardphoto/1.3.jpeg";
+import photo14 from "../assets/image/cardphoto/1.4.jpeg";
 import photo21 from "../assets/image/cardphoto/2.1.jpg";
 import photo22 from "../assets/image/cardphoto/2.2.jpg";
 import photo23 from "../assets/image/cardphoto/2.3.jpg";
+import photo24 from "../assets/image/cardphoto/2.4.jpg";
 import photo31 from "../assets/image/cardphoto/3.1.jpg";
 import photo32 from "../assets/image/cardphoto/3.2.jpeg";
 import photo33 from "../assets/image/cardphoto/3.3.jpeg";
+import photo34 from "../assets/image/cardphoto/3.4.jpg";
 import photo41 from "../assets/image/cardphoto/4.1.jpg";
-import photo42 from "../assets/image/cardphoto/4.2.jpeg";
-import photo43 from "../assets/image/cardphoto/4.3.png";
-import photo51 from "../assets/image/cardphoto/5.2.jpeg";
-import photo52 from "../assets/image/cardphoto/5.3.jpeg";
+import photo42 from "../assets/image/cardphoto/4.2.jpg";
+import photo43 from "../assets/image/cardphoto/4.3.jpg";
+import photo44 from "../assets/image/cardphoto/4.4.jpeg";
+import photo51 from "../assets/image/cardphoto/5.1.jpeg";
+import photo52 from "../assets/image/cardphoto/5.2.jpeg";
+import photo53 from "../assets/image/cardphoto/5.3.jpg";
+import photo54 from "../assets/image/cardphoto/5.4.jpg";
 import photo61 from "../assets/image/cardphoto/6.1.jpg";
 import photo62 from "../assets/image/cardphoto/6.2.jpg";
+import photo63 from "../assets/image/cardphoto/6.3.jpg";
+import photo64 from "../assets/image/cardphoto/6.4.jpg";
 import photo71 from "../assets/image/cardphoto/7.1.jpg";
 import photo72 from "../assets/image/cardphoto/7.2.jpeg";
 import photo73 from "../assets/image/cardphoto/7.3.jpeg";
+import photo74 from "../assets/image/cardphoto/7.4.jpg";
 import photo81 from "../assets/image/cardphoto/8.1.jpg";
 import photo82 from "../assets/image/cardphoto/8.2.jpg";
+import photo83 from "../assets/image/cardphoto/8.3.jpg";
+import photo84 from "../assets/image/cardphoto/8.4.jpg";
 import photo91 from "../assets/image/cardphoto/9.1.jpg";
 import photo92 from "../assets/image/cardphoto/9.2.jpg";
+import photo93 from "../assets/image/cardphoto/9.3.jpg";
+import photo94 from "../assets/image/cardphoto/9.4.jpg";
 import photo101 from "../assets/image/cardphoto/10.1.jpg";
 import photo102 from "../assets/image/cardphoto/10.2.jpeg";
+import photo103 from "../assets/image/cardphoto/10.3.jpg";
+import photo104 from "../assets/image/cardphoto/10.4.jpg";
 import photo111 from "../assets/image/cardphoto/11.1.jpg";
 import photo112 from "../assets/image/cardphoto/11.2.jpg";
+import photo113 from "../assets/image/cardphoto/11.3.jpg";
+import photo114 from "../assets/image/cardphoto/11.4.jpg";
 import photo121 from "../assets/image/cardphoto/12.1.jpg";
 import photo122 from "../assets/image/cardphoto/12.2.jpeg";
 import photo123 from "../assets/image/cardphoto/12.3.jpg";
+import photo124 from "../assets/image/cardphoto/12.4.jpg";
 import photo131 from "../assets/image/cardphoto/13.1.jpg";
 import photo132 from "../assets/image/cardphoto/13.2.jpeg";
+import photo133 from "../assets/image/cardphoto/13.3.jpg";
+import photo134 from "../assets/image/cardphoto/13.4.jpeg";
 import photo141 from "../assets/image/cardphoto/14.1.jpg";
 import photo142 from "../assets/image/cardphoto/14.2.jpeg";
 import photo143 from "../assets/image/cardphoto/14.3.jpg";
@@ -36,22 +57,27 @@ import photo144 from "../assets/image/cardphoto/14.4.jpg";
 import photo151 from "../assets/image/cardphoto/15.1.jpg";
 import photo152 from "../assets/image/cardphoto/15.2.jpeg";
 import photo153 from "../assets/image/cardphoto/15.3.jpeg";
+import photo154 from "../assets/image/cardphoto/15.4.jpg";
 import photo161 from "../assets/image/cardphoto/16.1.jpg";
 import photo162 from "../assets/image/cardphoto/16.2.jpeg";
 import photo163 from "../assets/image/cardphoto/16.3.jpeg";
+import photo164 from "../assets/image/cardphoto/16.4.jpg";
 import photo171 from "../assets/image/cardphoto/17.1.jpg";
 import photo172 from "../assets/image/cardphoto/17.2.jpeg";
 import photo173 from "../assets/image/cardphoto/17.3.jpeg";
+import photo174 from "../assets/image/cardphoto/17.4.jpg";
 import photo181 from "../assets/image/cardphoto/18.1.jpg";
 import photo182 from "../assets/image/cardphoto/18.2.jpg";
 import photo183 from "../assets/image/cardphoto/18.3.jpeg";
+import photo184 from "../assets/image/cardphoto/18.4.jpg";
 import photo191 from "../assets/image/cardphoto/19.1.jpg";
 import photo192 from "../assets/image/cardphoto/19.2.jpg";
+import photo193 from "../assets/image/cardphoto/19.3.jpg";
+import photo194 from "../assets/image/cardphoto/19.4.jpg";
 import photo201 from "../assets/image/cardphoto/20.1.jpg";
 import photo202 from "../assets/image/cardphoto/20.2.jpeg";
 import photo203 from "../assets/image/cardphoto/20.3.jpeg";
-import gigiLipstick from '../assets/image/cardphoto/gigihadid_lipstick.jpeg';
-import gigiLipstick2 from '../assets/image/cardphoto/gigihadid_lipsticks1.jpeg';
+import photo204 from "../assets/image/cardphoto/20.4.jpg";
 
 import { ICard } from "../models";
 
@@ -65,7 +91,7 @@ export const dataCard: ICard[] = [
       "Maybelline Gigi Hadid Lipstick is a highly pigmented colour with sensuous precious oils. Amp up your look for a statement-making West Coast Glow look",
     price: 10.95,
     stock: 5,
-    photos: [photo11, photo12, gigiLipstick, gigiLipstick2],
+    photos: [photo11, photo12, photo13, photo14],
   },
   {
     id: 2,
@@ -76,7 +102,7 @@ export const dataCard: ICard[] = [
       "NYX Professional Make Up Matte Lipstick is a shockingly smooth matte lipstick that glides right on and stays in place with a silky matte finish. Never a dry feeling, always creamy, dreamy and matte.",
     price: 9.75,
     stock: 3,
-    photos: [photo21, photo22, photo23],
+    photos: [photo21, photo22, photo23, photo24],
   },
   {
     id: 3,
@@ -87,7 +113,7 @@ export const dataCard: ICard[] = [
       "NYX Professional Make Up Machinist Lipstick is a comfortably creamy formula that is loaded with ultra-fine pearls that add over-the-top luster to your pout. These high-coverage lippies are the perfect accessories.",
     price: 8.53,
     stock: 4,
-    photos: [photo31, photo32, photo33],
+    photos: [photo31, photo32, photo33, photo34],
   },
   {
     id: 4,
@@ -98,7 +124,7 @@ export const dataCard: ICard[] = [
       "Max Factor Lipfinity Lipstick Matte is a two-step application that includes a long-lasting, sumptuous colour and moisturising balm for a perfect matte finish. Glides on effortlessly onto lips and stays in place for up to 12 hours without over-drying.",
     price: 10.95,
     stock: 9,
-    photos: [photo41, photo42, photo43],
+    photos: [photo41, photo42, photo43, photo44],
   },
   {
     id: 5,
@@ -109,7 +135,7 @@ export const dataCard: ICard[] = [
       "L'Oreal Shine Caresse Lip Colour is a stain that thinks it's a gloss. This next generation lip colour, formulated with a blend of hydrating oils and concentrated pigments, delivers lasting colour with a glossy finish. Packed with 30% water, colour caresse leaves lips soft, comfortable and hydrated for up to 6 hours.",
     price: 8.88,
     stock: 7,
-    photos: [photo51, photo52],
+    photos: [photo51, photo52, photo53, photo54],
   },
   {
     id: 6,
@@ -120,7 +146,7 @@ export const dataCard: ICard[] = [
       "Max Factor False Lash Effect Mascara doubles your lash size with the impact of false lashes without the fuss. Why fake it when you can get a false lash effect with your own lashes?",
     price: 14.62,
     stock: 5,
-    photos: [photo61, photo62],
+    photos: [photo61, photo62, photo63, photo64],
   },
   {
     id: 7,
@@ -131,7 +157,7 @@ export const dataCard: ICard[] = [
       "The Max Factor Masterpiece Eyeshadow Palette creates a series of wearable, everyday makeup looks.Designed with opulent neutral hues, the palette is extremely versatile. It stars 8 flattering shades that lend themselves to both subtle days and striking night time creations.",
     price: 18.27,
     stock: 5,
-    photos: [photo71, photo72, photo73],
+    photos: [photo71, photo72, photo73, photo74],
   },
   {
     id: 8,
@@ -142,7 +168,7 @@ export const dataCard: ICard[] = [
       "Max Factor Xperience Volumising Mascara is a mouuse effect formula that lifts lashes to the max! Leaves lashes looking fuller and thicker with a lightweight feel..",
     price: 12.17,
     stock: 5,
-    photos: [photo81, photo82],
+    photos: [photo81, photo82, photo83, photo84],
   },
   {
     id: 9,
@@ -153,7 +179,7 @@ export const dataCard: ICard[] = [
       "Voluminous Million Lashes Mascara has a revolutionary collagen infused formula and Millionizer Brush for amplified volume and definition. The luxurious, buildable, No Clump Formula amplifies each lash instantly.",
     price: 15.11,
     stock: 2,
-    photos: [photo91, photo92],
+    photos: [photo91, photo92, photo93, photo94],
   },
   {
     id: 10,
@@ -164,7 +190,7 @@ export const dataCard: ICard[] = [
       "Colossal brush, colossal volume, colossal impact from Maybelline New York's Colossal Mascara 100% Black. The collagen enriched formula plumps your lash look for mega impact.",
     price: 10.95,
     stock: 4,
-    photos: [photo101, photo102],
+    photos: [photo101, photo102, photo103, photo104],
   },
   {
     id: 11,
@@ -175,7 +201,7 @@ export const dataCard: ICard[] = [
       "Maybelline Gigi Hadid Eyeshadow Palette is a limited edition, six eyeshadow palette designed in collaboration with Gigi Hadid. Add dimension to your lids with an endless array of eye makeup looks in one palette.",
     price: 12.17,
     stock: 8,
-    photos: [photo111, photo112],
+    photos: [photo111, photo112, photo113, photo114],
   },
   {
     id: 12,
@@ -186,7 +212,7 @@ export const dataCard: ICard[] = [
       "Maybelline Dream Flawless Nude Fluid Touch Foundation contains concentrated pigments that give flawless coverage yet its texture is 12 times finer for a perfectly nude finish and feel.",
     price: 10.95,
     stock: 2,
-    photos: [photo121, photo122, photo123],
+    photos: [photo121, photo122, photo123, photo124],
   },
   {
     id: 13,
@@ -197,7 +223,7 @@ export const dataCard: ICard[] = [
       "L'Oreal True Match The Foundation gives a completely natural and complexion-perfecting finish, enhancing every woman's natural beauty. It is a super-blendable foundation that perfectly matches the skin's unique tone and texture.",
     price: 15.83,
     stock: 7,
-    photos: [photo131, photo132],
+    photos: [photo131, photo132, photo133, photo134],
   },
   {
     id: 14,
@@ -219,7 +245,7 @@ export const dataCard: ICard[] = [
       "Maybelline Dream Radiant Liquid Hydrating Foundation works to minimise the appearance of pores and fine lines, leaving a weightless veil in its wake. Medium coverage is promoted, with the airy formula allowing you to build to achieve your desired aesthetic.",
     price: 10.95,
     stock: 3,
-    photos: [photo151, photo152, photo153],
+    photos: [photo151, photo152, photo153, photo154],
   },
   {
     id: 16,
@@ -228,9 +254,9 @@ export const dataCard: ICard[] = [
     category: "foundation",
     description:
       "NYX Professional Make Up Stay Matte But Not Flat Liquid Foundation provides medium to full coverage with a light texture for easy application. Consists of Vitamin E to soften blemishes and fine lines. Long lasting wear up to 8 hours.",
-    price: 13.40,
+    price: 13.4,
     stock: 5,
-    photos: [photo161, photo162, photo163],
+    photos: [photo161, photo162, photo163, photo164],
   },
   {
     id: 17,
@@ -241,7 +267,7 @@ export const dataCard: ICard[] = [
       "NYX Professional Make Up Lush Lashes Mascara is designed to add volume and length. The thick wand catches all lashes with the enriched formula with natural waxes and vitamins. Provides long lasting colour. The sky's the limit with NYX clump-free, voluminous formula. The unique combination of brushes build volume from the roots with the short teaser bristles and coat lashes easily from root to tip with the sky-high length bristles.",
     price: 12.19,
     stock: 1,
-    photos: [photo171, photo173, photo172],
+    photos: [photo171, photo172, photo173, photo174],
   },
   {
     id: 18,
@@ -250,9 +276,9 @@ export const dataCard: ICard[] = [
     category: "eye shadow",
     description:
       "NYX Professional Make Up Off Tropic Eyeshadow Palette is inspired by the heat and sand from a paradise island. Each of the eclectic palettes contacts extravagant metallic, carpet and velvet shades. Adds fun colour to your everyday makeup.",
-    price: 19.50,
+    price: 19.5,
     stock: 6,
-    photos: [photo181, photo182, photo183],
+    photos: [photo181, photo182, photo183, photo184],
   },
   {
     id: 19,
@@ -263,7 +289,7 @@ export const dataCard: ICard[] = [
       "12 captivating warm eyeshadow shades. Variety of finishes, from mattes to shimmering pearls, for endless enchanting eyeshadow looks.",
     price: 14.99,
     stock: 4,
-    photos: [photo191, photo192],
+    photos: [photo191, photo192, photo193, photo194],
   },
   {
     id: 20,
@@ -274,6 +300,6 @@ export const dataCard: ICard[] = [
       "Inspired by makeup designers 'Must Have' palettes, the La Palette Nude offers everything you need to master the art of nude eyeshadow. Makeup Designer Nude looks curated exclusively for each palette with step by step instructions and live tutorials. 10 highly pigmented shades range from light to dark to flatter every skin tone in 3 shadow finishes: shimmery satin, buttery matte & lustrous sheen.",
     price: 19.99,
     stock: 5,
-    photos: [photo201, photo203, photo202],
+    photos: [photo201, photo202, photo203, photo204],
   },
 ];
