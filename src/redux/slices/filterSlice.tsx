@@ -57,6 +57,20 @@ export const filterSlice = createSlice({
       action.payload.sort((a: ICard, b: ICard) => a.stock - b.stock);
     },
 
+    setFilterByPrice: (state, action) => {
+      state.items = action.payload.items.filter(
+        (card: any) =>
+          card.price >= action.payload.min && card.price <= action.payload.max
+      );
+    },
+
+    setFilterByStock: (state, action) => {
+      state.items = action.payload.items.filter(
+        (card: any) =>
+          card.stock >= action.payload.min && card.stock <= action.payload.max
+      );
+    },
+
     setFilterByCategoryAndBrand: (state, action) => {
       state.items = dataCard.filter((card) => {
         if (
@@ -97,6 +111,8 @@ export const {
   setSortByBrandAsc,
   setSortByBrandDesc,
   setSortByStock,
+  setFilterByPrice,
+  setFilterByStock,
   setFilterByCategoryAndBrand,
 } = filterSlice.actions;
 

@@ -1,14 +1,15 @@
-import { useDispatch } from "react-redux";
-import { Fragment, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Fragment, useEffect, useState } from "react";
 import DoubleRangeSlider from "./DoubleRangeSlider";
 import {
   setFilterByCategoryAndBrand,
-  setSortByPriceAsc,
-  setSortByStock,
+  setFilterByPrice,
+  setFilterByStock,
 } from "../redux/slices/filterSlice";
 import { dataCard } from "../data/dataCard";
 
 import "./../styles/Filter.css";
+import { RootState } from "../redux/store";
 
 type FilterType = {
   brand: string;
@@ -32,8 +33,32 @@ const defaultFiltersState = {
 
 const Filter = () => {
   const dispatch = useDispatch();
+  const { items } = useSelector((state: RootState) => state.filter);
+
+  const minValuePrice = Math.floor(
+    dataCard.sort((a, b) => a.price - b.price)[0].price
+  );
+  const maxValuePrice = Math.ceil(
+    dataCard.sort((a, b) => b.price - a.price)[0].price
+  );
+
+  const minValueStock = Math.floor(
+    dataCard.sort((a, b) => a.stock - b.stock)[0].stock
+  );
+  const maxValueStock = Math.ceil(
+    dataCard.sort((a, b) => b.stock - a.stock)[0].stock
+  );
 
   const [filter, setFilter] = useState(defaultFiltersState);
+  const [priceFilter, setPriceFilter] = useState({
+    min: 8,
+    max: maxValuePrice,
+  });
+
+  const [stockFilter, setStockFilter] = useState({
+    min: minValueStock,
+    max: maxValueStock,
+  });
 
   const checkHandler = (item: FilterType, switcher: string) => {
     if (switcher === "category") {
@@ -81,16 +106,13 @@ const Filter = () => {
     }
   };
 
-  const sortDataPrice = dispatch(setSortByPriceAsc(dataCard));
-  const minValuePrice = Math.floor(sortDataPrice.payload[0].price);
-  const maxValuePrice = Math.ceil(
-    sortDataPrice.payload[sortDataPrice.payload.length - 1].price
-  );
+  useEffect(() => {
+    dispatch(setFilterByPrice({ ...priceFilter, items }));
+  }, [priceFilter]);
 
-  const sortDataStock = dispatch(setSortByStock(dataCard));
-  const minValueStock = sortDataStock.payload[0].stock;
-  const maxValueStock =
-    sortDataStock.payload[sortDataStock.payload.length - 1].stock;
+  useEffect(() => {
+    dispatch(setFilterByStock({ ...stockFilter, items }));
+  }, [stockFilter]);
 
   const findCategory = dataCard.reduce((acc: any, item) => {
     if (!acc.find((accItems: any) => item.category === accItems.category)) {
@@ -115,7 +137,6 @@ const Filter = () => {
           className="filter__button"
           onClick={() => {
             setFilter(defaultFiltersState);
-
             dispatch(setFilterByCategoryAndBrand(defaultFiltersState));
           }}
         >
@@ -187,7 +208,7 @@ const Filter = () => {
           min={minValuePrice}
           max={maxValuePrice}
           onChange={({ min, max }: { min: number; max: number }) =>
-            console.log(`min = ${min}, max = ${max}`)
+            setPriceFilter({ min, max })
           }
         />
       </div>
@@ -197,7 +218,7 @@ const Filter = () => {
           min={minValueStock}
           max={maxValueStock}
           onChange={({ min, max }: { min: number; max: number }) =>
-            console.log(`min = ${min}, max = ${max}`)
+            setStockFilter({ min, max })
           }
         />
       </div>
