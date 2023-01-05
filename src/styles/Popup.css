@@ -153,3 +153,10 @@ small {
   font-size: 0.8rem;
   display: block;
 }
+
+.modal-popup_card-details-cardNumber__example {
+  color: var(--color-gray);
+  font-size: 0.8rem;
+  font-weight: normal;
+  padding-top: 6px;
+}
