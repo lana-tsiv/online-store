@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import type { PayloadAction } from "@reduxjs/toolkit";
 
 import { ICard } from "../../models";
 import { dataCard } from "../../data/dataCard";
@@ -59,14 +58,14 @@ export const filterSlice = createSlice({
 
     setFilterByPrice: (state, action) => {
       state.items = action.payload.items.filter(
-        (card: any) =>
+        (card: ICard) =>
           card.price >= action.payload.min && card.price <= action.payload.max
       );
     },
 
     setFilterByStock: (state, action) => {
       state.items = action.payload.items.filter(
-        (card: any) =>
+        (card: ICard) =>
           card.stock >= action.payload.min && card.stock <= action.payload.max
       );
     },
@@ -94,17 +93,12 @@ export const filterSlice = createSlice({
         }
       });
     },
-
-    incrementByAmount: (state, action: PayloadAction<number>) => {
-      // state.value += action.payload
-    },
   },
 });
 
 export const {
   setCategoryId,
   setSort,
-  incrementByAmount,
   setSortByDefault,
   setSortByPriceAsc,
   setSortByPriceDesc,
