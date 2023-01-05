@@ -114,18 +114,18 @@ const Filter = () => {
     dispatch(setFilterByStock({ ...stockFilter, items }));
   }, [stockFilter]);
 
-  const findCategory = dataCard.reduce((acc: any, item) => {
-    if (!acc.find((accItems: any) => item.category === accItems.category)) {
+  const findCategory = dataCard.reduce((acc: { category: string, brand: string }[], item) => {
+    if (!acc.find((accItems) => item.category === accItems.category)) {
       acc.push({ category: item.category, brand: item.brand });
-      acc.sort((a: any, b: any) => a.category.localeCompare(b));
+      acc.sort((a, b) => a.category.localeCompare(b.category));
     }
     return acc;
   }, []);
 
-  const findBrand = dataCard.reduce((acc: any, item) => {
-    if (!acc.find((accItems: any) => item.brand === accItems.brand)) {
+  const findBrand = dataCard.reduce((acc: { category: string, brand: string }[], item) => {
+    if (!acc.find((accItems) => item.brand === accItems.brand)) {
       acc.push({ category: item.category, brand: item.brand });
-      acc.sort((a: any, b: any) => a.brand.localeCompare(b));
+      acc.sort((a, b) => a.brand.localeCompare(b.brand));
     }
     return acc;
   }, []);
@@ -147,7 +147,7 @@ const Filter = () => {
       <p className="filter-type__title">Category</p>
       <div className="filter-type checkbox-container category">
         <Fragment>
-          {findCategory.map((item: any, index: number) => {
+          {findCategory.map((item, index: number) => {
             return (
               <div key={item.category + index} className="checkbox-item">
                 <div className="checkbox-item__input-wrap">
@@ -177,7 +177,7 @@ const Filter = () => {
       <p className="filter-type__title">Brand name</p>
       <div className="filter-type checkbox-container brand-name">
         <Fragment>
-          {findBrand.map((item: any, index: number) => {
+          {findBrand.map((item, index: number) => {
             return (
               <div key={item.brand + index} className="checkbox-item">
                 <div className="checkbox-item__input-wrap">
