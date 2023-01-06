@@ -19,7 +19,6 @@ const DoubleRangeSlider = (props: DoubleRangeSliderProps) => {
   const range = useRef<HTMLInputElement>(null);
 
   const getPercent = useCallback(
-    // (value: number) => Math.round(((value - min) / (max - min)) * 100),
     (value: number) => ((value - min) / (max - min)) * 100,
     [min, max]
   );
