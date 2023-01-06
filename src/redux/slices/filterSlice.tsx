@@ -32,39 +32,45 @@ export const filterSlice = createSlice({
       state.sort = action.payload;
     },
     setSortByDefault: (state, action) => {
-      action.payload.sort((a: ICard, b: ICard) => a.id - b.id);
+      state.items = [...action.payload].sort(
+        (a: ICard, b: ICard) => a.id - b.id
+      );
     },
     setSortByPriceAsc: (state, action) => {
-      action.payload.sort((a: ICard, b: ICard) => a.price - b.price);
-
-      // console.log(result);
+      state.items = [...action.payload].sort(
+        (a: ICard, b: ICard) => a.price - b.price
+      );
     },
     setSortByPriceDesc: (state, action) => {
-      action.payload.sort((a: ICard, b: ICard) => a.price - b.price).reverse();
+      state.items = [...action.payload]
+        .sort((a: ICard, b: ICard) => a.price - b.price)
+        .reverse();
     },
     setSortByBrandAsc: (state, action) => {
-      action.payload.sort((a: ICard, b: ICard) =>
+      state.items = [...action.payload].sort((a: ICard, b: ICard) =>
         a.brand.localeCompare(b.brand)
       );
     },
     setSortByBrandDesc: (state, action) => {
-      action.payload
+      state.items = [...action.payload]
         .sort((a: ICard, b: ICard) => a.brand.localeCompare(b.brand))
         .reverse();
     },
     setSortByStock: (state, action) => {
-      action.payload.sort((a: ICard, b: ICard) => a.stock - b.stock);
+      state.items = [...action.payload].sort(
+        (a: ICard, b: ICard) => a.stock - b.stock
+      );
     },
 
     setFilterByPrice: (state, action) => {
-      state.items = action.payload.items.filter(
+      state.items = [...action.payload.items].filter(
         (card: ICard) =>
           card.price >= action.payload.min && card.price <= action.payload.max
       );
     },
 
     setFilterByStock: (state, action) => {
-      state.items = action.payload.items.filter(
+      state.items = [...action.payload.items].filter(
         (card: ICard) =>
           card.stock >= action.payload.min && card.stock <= action.payload.max
       );

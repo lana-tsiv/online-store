@@ -35,6 +35,8 @@ const Filter = () => {
   const dispatch = useDispatch();
   const { items } = useSelector((state: RootState) => state.filter);
 
+  const [filter, setFilter] = useState(defaultFiltersState);
+
   const minValuePrice = Math.floor(
     dataCard.sort((a, b) => a.price - b.price)[0].price
   );
@@ -49,9 +51,8 @@ const Filter = () => {
     dataCard.sort((a, b) => b.stock - a.stock)[0].stock
   );
 
-  const [filter, setFilter] = useState(defaultFiltersState);
   const [priceFilter, setPriceFilter] = useState({
-    min: 8,
+    min: minValuePrice,
     max: maxValuePrice,
   });
 
@@ -114,21 +115,27 @@ const Filter = () => {
     dispatch(setFilterByStock({ ...stockFilter, items }));
   }, [stockFilter]);
 
-  const findCategory = dataCard.reduce((acc: { category: string, brand: string }[], item) => {
-    if (!acc.find((accItems) => item.category === accItems.category)) {
-      acc.push({ category: item.category, brand: item.brand });
-      acc.sort((a, b) => a.category.localeCompare(b.category));
-    }
-    return acc;
-  }, []);
+  const findCategory = dataCard.reduce(
+    (acc: { category: string; brand: string }[], item) => {
+      if (!acc.find((accItems) => item.category === accItems.category)) {
+        acc.push({ category: item.category, brand: item.brand });
+        acc.sort((a, b) => a.category.localeCompare(b.category));
+      }
+      return acc;
+    },
+    []
+  );
 
-  const findBrand = dataCard.reduce((acc: { category: string, brand: string }[], item) => {
-    if (!acc.find((accItems) => item.brand === accItems.brand)) {
-      acc.push({ category: item.category, brand: item.brand });
-      acc.sort((a, b) => a.brand.localeCompare(b.brand));
-    }
-    return acc;
-  }, []);
+  const findBrand = dataCard.reduce(
+    (acc: { category: string; brand: string }[], item) => {
+      if (!acc.find((accItems) => item.brand === accItems.brand)) {
+        acc.push({ category: item.category, brand: item.brand });
+        acc.sort((a, b) => a.brand.localeCompare(b.brand));
+      }
+      return acc;
+    },
+    []
+  );
 
   return (
     <div className="filter">
