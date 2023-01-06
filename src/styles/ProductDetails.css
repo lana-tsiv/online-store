@@ -119,3 +119,8 @@
             var(--color-light-orange)
     );
 }
+
+.product-details-button_add__disabled {
+    pointer-events: none;
+    color: var(--color-white);
+}

@@ -10,9 +10,16 @@ import Breadcrumbs from "../components/Breadcrumbs";
 import ImageGallery from "../components/ImageGallery";
 
 import ReactModal from 'react-modal';
+import {addItem} from "../redux/slices/cartSlice";
+import {useDispatch} from "react-redux";
 
 const ProductDetailsPage = () => {
     const {pathname} = useLocation();
+
+    const currentId = pathname.split("/")[2];
+
+    const card = dataCard.find((item) => item.id === Number(currentId))
+    console.log(card)
     const [currCard, setCurrCard] = useState<ICard>({
         id: 0,
         productName: "",
@@ -22,8 +29,8 @@ const ProductDetailsPage = () => {
         price: 0,
         stock: 0,
         photos: [],
+        ...card
     });
-    const currentId = pathname.split("/")[2];
 
     useEffect(() => {
         dataCard.forEach((item) => {
@@ -43,6 +50,16 @@ const ProductDetailsPage = () => {
         setIsOpen(false);
     }
 
+    const [currStock, setCurrStock] = useState(currCard.stock)
+
+    const dispatch = useDispatch()
+    const addItemHandler = () => {
+        dispatch(addItem(currCard))
+        if(currStock > 0) {
+            setCurrStock(currStock-1)
+        }
+    }
+
     return (
         <div className='product-details-wrap'>
             <Breadcrumbs id={currCard.id} title={currCard.brand} category={currCard.category}
@@ -56,10 +73,10 @@ const ProductDetailsPage = () => {
                     <p className="product-details__description">{currCard.description}</p>
                     <div className='product-details__price-info'>
                         <p className="product-details__price">${currCard.price}</p>
-                        <p className="product-details__stock">Stock: {currCard.stock}</p>
+                        <p className='product-details__stock'>Stock: {currStock}</p>
                     </div>
                     <div className='product-details__buttons-wrap'>
-                        <button className="product-details-button_add">ADD TO CART</button>
+                        <button className={currStock === 0 ? 'product-details-button_add product-details-button_add__disabled': 'product-details-button_add'} onClick={addItemHandler}>ADD TO CART</button>
                         <button className="product-details-button_buy" onClick={openModal}>BUY NOW</button>
                     </div>
                 </div>
