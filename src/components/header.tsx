@@ -33,7 +33,7 @@ const Header = () => {
           <div className="basket-icon">
             <img className="basket__image" src={basket} alt="basket" />
             <div className="basket__quantity">
-              {items && items.reduce((sum, obj) => obj.count + sum, 0)} 
+              {/* {items && items.reduce((sum, obj) => obj.count + sum, 0)} // <--------- what is count  ??*/}
               {items.reduce((sum, obj) => {
                 return obj.stock + sum;
               }, 0)}

@@ -5,7 +5,11 @@ import { setSort } from "../redux/slices/filterSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../redux/store";
 
-const Sort = (props: any) => {
+
+type SortProps = {
+  setCurrentSort: (value: string) => void
+}
+const Sort = ({setCurrentSort}: SortProps) => {
   const dispatch = useDispatch();
 
   const sort = useSelector((state: RootState) => state.filter.sort);
@@ -37,7 +41,7 @@ const Sort = (props: any) => {
   const onClickSortSelect = (index: number) => {
     dispatch(setSort(selectList[index]));
     setSortSelect(index);
-    props.setCurrentSort(selectList[index].sortProperty);
+    setCurrentSort(selectList[index].sortProperty);
     const sortIcon = document.querySelector(".sort__icon");
     sortIcon?.classList.remove("open");
     setDropDown(false);

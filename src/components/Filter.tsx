@@ -37,11 +37,19 @@ const Filter = () => {
 
   const [filter, setFilter] = useState(defaultFiltersState);
 
-  const minValuePrice = 1;
-  const maxValuePrice = 21;
+  const minValuePrice = Math.floor(
+    dataCard.sort((a, b) => a.price - b.price)[0].price
+  );
+  const maxValuePrice = Math.ceil(
+    dataCard.sort((a, b) => b.price - a.price)[0].price
+  );
 
-  const minValueStock = 1;
-  const maxValueStock = 100;
+  const minValueStock = Math.floor(
+    dataCard.sort((a, b) => a.stock - b.stock)[0].stock
+  );
+  const maxValueStock = Math.ceil(
+    dataCard.sort((a, b) => b.stock - a.stock)[0].stock
+  );
 
   const [priceFilter, setPriceFilter] = useState({
     min: minValuePrice,
