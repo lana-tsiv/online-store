@@ -63,14 +63,14 @@ export const filterSlice = createSlice({
     },
 
     setFilterByPrice: (state, action) => {
-      state.items = [...action.payload.items].filter(
+      state.items = [...dataCard].filter(
         (card: ICard) =>
           card.price >= action.payload.min && card.price <= action.payload.max
       );
     },
 
     setFilterByStock: (state, action) => {
-      state.items = [...action.payload.items].filter(
+      state.items = [...dataCard].filter(
         (card: ICard) =>
           card.stock >= action.payload.min && card.stock <= action.payload.max
       );

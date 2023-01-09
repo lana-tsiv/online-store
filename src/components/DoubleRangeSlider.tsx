@@ -1,5 +1,5 @@
 import "./../styles/DoubleRangeSlider.css";
-import React, { useCallback, useEffect, useState, useRef } from "react";
+import { useCallback, useEffect, useState, useRef } from "react";
 
 type DoubleRangeSliderProps = {
   min: number;
