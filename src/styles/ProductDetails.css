@@ -1,0 +1,126 @@
+.product-details-wrap {
+    display: flex;
+    flex-direction: column;
+    padding: 48px 36px;
+}
+
+.product-details {
+    padding: 32px 48px;
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    align-items: center;
+    margin: 5% 10%;
+    border: 1px solid var(--color-light-gray);
+    border-radius: 10px;
+}
+
+.product-details__info {
+    width: 50%;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.product-details__brand {
+    font-size: 1.1rem;
+    font-weight: bolder;
+    color: var(--color-dark-blue);
+}
+
+.product-details__product-name {
+    font-size: 1.0rem;
+    color: var(--color-shuttle-gray);
+}
+
+.product-details__category {
+    font-weight: 300;
+    font-style: italic;
+    color: var(--color-gray);
+    padding: 10px 0;
+}
+
+.product-details__description {
+    color: var(--color-shuttle-gray);
+    font-weight: 300;
+    padding: 16px 16px 16px 0;
+    font-style: italic;
+    line-height: 130%;
+    font-size: 1rem;
+    border-top: 1px dashed var(--color-light-gray);
+    border-bottom: 1px dashed var(--color-light-gray);
+}
+
+.product-details__price-info {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 32px;
+    padding: 10px 0;
+}
+
+.product-details__price {
+    color: var(--color-dark-blue);
+    font-weight: bolder;
+    font-size: 1.4rem;
+}
+
+.product-details__stock {
+    color: var(--color-gray);
+    font-size: 1rem;
+}
+
+.product-details__buttons-wrap {
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 24px;
+}
+
+.product-details-button_add,
+.product-details-button_buy {
+    width: 45%;
+    background-color: var(--color-orange);
+    border: none;
+    padding: 20px 0;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.product-details-button_buy {
+    font-weight: bolder;
+    color: var(--color-polar);
+    background: linear-gradient(
+            105deg,
+            var(--color-light-orange),
+            var(--color-orange)
+    );
+    box-shadow: 0 12px 35px rgb(255 78 0 / 60%);
+}
+
+.product-details-button_add:hover {
+    color: var(--color-polar);
+    background-color: var(--color-gray);
+}
+
+.product-details-button_add {
+    font-weight: bolder;
+    background-color: var(--color-polar);
+    color: var(--color-shuttle-gray);
+}
+
+.product-details-button_buy:hover {
+    background: linear-gradient(
+            105deg,
+            var(--color-sun),
+            var(--color-light-orange)
+    );
+}
+
+.product-details-button_add__disabled {
+    pointer-events: none;
+    color: var(--color-white);
+}
